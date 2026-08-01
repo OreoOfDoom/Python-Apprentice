@@ -43,7 +43,7 @@ def add_definition(db, key, value):
     # Check the limit
 
     # Set the item in the database
-    if  len(db) < 5:
+    if  len(db) < 10:
         print("hi")
         db[key] = value
     else:
