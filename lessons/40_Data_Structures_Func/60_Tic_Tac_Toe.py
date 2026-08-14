@@ -7,6 +7,7 @@ name: Tic Tac Toe
 
 #imports
 from guizero import App, Box, PushButton, Text, info
+nugget = 5
 
 X_MARK = "X"
 O_MARK = "O"
@@ -22,6 +23,11 @@ def check_row(l):
     Returns:
         The winner's token ( X or O ) if there is one, otherwise None
         """
+    if l (l[0]==l[1] and l[1] == l[2]):
+        if l == X_MARK:
+            print
+    
+
 
     return None
 
