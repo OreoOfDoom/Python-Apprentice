@@ -16,16 +16,13 @@ O_MARK = "O"
 # IMPORTANT! In your code, you should use the constants X_MARK and O_MARK instead of the strings "x" and "o"
 
 def check_row(l):
-    """Check if a player won on a row
-    Args:
-        l: a 3 element iterable
-
-    Returns:
-        The winner's token ( X or O ) if there is one, otherwise None
-        """
     if l (l[0]==l[1] and l[1] == l[2]):
-        if l == X_MARK:
-            print
+        if l[1] == X_MARK:
+            return X_MARK
+            
+        if l[1] == O_MARK:
+            return O_MARK
+            
     
 
 
@@ -39,12 +36,11 @@ def check_win(board):
     Returns:
         The winner's token ( X or O ) if there is one, otherwise None
     """
-
+    for board in 
     return None
 
-# The following code is the main part of the program. It creates a GUI for the
-# game and handles the game logic. Implement the functions above first, then
-# after your program is working you can try changing the code below.
+
+
 
 class TicTacToe:
     """A Simple Tic Tac Toe game"""
