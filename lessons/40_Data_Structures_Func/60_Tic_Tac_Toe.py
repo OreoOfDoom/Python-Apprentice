@@ -36,7 +36,13 @@ def check_win(board):
     Returns:
         The winner's token ( X or O ) if there is one, otherwise None
     """
-    for board in 
+    for row in board:
+       check_row(row)
+       winnar = check_row()
+       if winnar = X_MARK:
+        print("X WON YAY")
+
+       
     return None
 
 
