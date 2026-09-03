@@ -16,7 +16,7 @@ O_MARK = "O"
 # IMPORTANT! In your code, you should use the constants X_MARK and O_MARK instead of the strings "x" and "o"
 
 def check_row(l):
-    if l (l[0]==l[1] and l[1] == l[2]):
+    if l[0]==l[1] and l[1] == l[2]:
         if l[1] == X_MARK:
             return X_MARK
             
@@ -37,10 +37,44 @@ def check_win(board):
         The winner's token ( X or O ) if there is one, otherwise None
     """
     for row in board:
-       check_row(row)
-       winnar = check_row()
-       if winnar = X_MARK:
-        print("X WON YAY")
+       winnar = check_row(row)
+       if winnar == X_MARK:
+        return X_MARK
+       if winnar == O_MARK:
+        return O_MARK
+
+
+
+    board2 = list(zip(*board))
+    
+    for row in board2:
+        winnar = check_row(row)
+        if winnar == X_MARK:
+            return X_MARK
+        if winnar == O_MARK:
+            return O_MARK
+
+
+
+    diag1 = [board[i][i] for i in range (3)]
+    diag2 = [board[i][2-i]for i in range(3)]
+    winnar = check_row(diag1)
+    
+
+    if winnar == X_MARK:
+        return X_MARK
+    if winnar == O_MARK:
+        return O_MARK
+
+    winnar = check_row(diag2)
+    if winnar == X_MARK:
+        return X_MARK
+    if winnar == O_MARK:
+        return O_MARK
+
+        
+    
+
 
        
     return None

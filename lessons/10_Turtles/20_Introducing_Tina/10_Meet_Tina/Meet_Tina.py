@@ -17,7 +17,7 @@ turtle.setup(600, 600, 0, 0)            # Set the size of the window
 
 tina = turtle.Turtle()                  # Create a turtle named tina
 
-tina.speed('fastest')                   # Set the speed of the turtle to fastest
+tina.speed('fast')                   # Set the speed of the turtle to fastest
 
 # Draw the hexagon
 tina.penup()                            # Lift the pen up so we can move tina without drawing
