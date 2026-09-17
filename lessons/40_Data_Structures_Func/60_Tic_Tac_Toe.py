@@ -98,6 +98,8 @@ class TicTacToe:
 
         self.message.text_color = "green"
 
+    
+
         self.win_func = win_func
 
         self.reset()
@@ -129,6 +131,8 @@ class TicTacToe:
         """Handle one player turn, and return a marker if one of the players won"""
         self.board[x][y] = self.current_turn
         self.buttons[x][y].text = self.current_turn
+        if self.current_turn == X_MARK:
+            self.buttons[x][y].text_color = "black"
         self.buttons[x][y].disable()
 
         self.turn_n += 1
