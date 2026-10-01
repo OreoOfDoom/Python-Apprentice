@@ -1,5 +1,14 @@
 """ A dictionary that stores names and room numbers.A while loop that runs until the hotel week is over.
 A set amount of customers before a customer leaves, a resturaunt and finally, checkout payments """
+def get_guest_room_number():
+    while True:
+        number = int(input("Please tell me your room # \n"))
+        if number not in rooms.keys() or rooms[number] == True:
+            print("This is not a checked in room please try again.")
+        else:
+            break
+    return number
+
 room_data = {}
 room_price = { "Sunset Suite" : 350,
                "Suite"        : 300,
@@ -12,13 +21,10 @@ def da_resturanto():
         cost = 20
     elif buffet == "lunch" or buffet == "dinner":
         cost = 40
+    
+    number = get_guest_room_number()
 
-    while True:
-        number = int(input("Please tell me your room # \n"))
-        if number not in rooms.keys() or rooms[number] == True:
-            print("This is not a checked in room please try again.")
-        else:
-            break
+
       
 
     confirming = print("Ok! This will be added to your checkout payment!")
@@ -34,12 +40,7 @@ def check_in():
     if yes_no == ("yes"):
         print("okay thanks!")
 
-        for room,availible in rooms.items():
-            if availible == True:
-                rooms [room] = False
-                room_data[room]=[people,time,room_type,0]
-                               
-                break
+
             
 
     if yes_no == ("no"):
@@ -51,7 +52,7 @@ def check_in():
 
 
 def check_out():
-    where = int(input("Which room are you in?\n"))
+    where = get_guest_room_number()
 
     rooms[where]= True
     ur_name = room_data [where][0]
